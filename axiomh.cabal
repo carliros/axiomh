@@ -14,10 +14,11 @@ category:            Logic
 build-type:          Simple
 extra-source-files:  CHANGELOG.md
 
-executable hac
+executable ahc
   main-is:             Main.hs
   other-modules:
     Engine
+    ParserOptions
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13
                      , uu-parsinglib >= 2.9.1.1
