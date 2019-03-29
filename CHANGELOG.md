@@ -1,4 +1,4 @@
-# Revision history for haxiom
+# Revision history for axiom prover helper
 
 ## 0.1.0.0 -- YYYY-mm-dd
 
