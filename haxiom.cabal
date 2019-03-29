@@ -16,17 +16,10 @@ category:            Logic
 build-type:          Simple
 extra-source-files:  CHANGELOG.md
 
-library
-  -- exposed-modules:
-  -- other-modules:
-  -- other-extensions:
-  build-depends:       base >=4.12 && <4.13
-  hs-source-dirs:      src
-  default-language:    Haskell2010
-
-executable haxiom
+executable hac
   main-is:             Main.hs
-  -- other-modules:
+  other-modules:
+    Engine
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13
   hs-source-dirs:      src
