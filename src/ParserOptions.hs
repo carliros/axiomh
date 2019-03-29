@@ -10,9 +10,8 @@ data AxiomOptions
   = AxiomOptions { input :: FilePath }
 
 parseOptions :: Parser AxiomOptions
-parseOptions = AxiomOptions <$> argument str
-  ( metavar "FILE" <> help "Input file for the app"
-  )
+parseOptions = AxiomOptions
+  <$> argument str (metavar "FILE" <> help "Input file for the app")
 
 runParser = execParser opts
  where
