@@ -1,7 +1,7 @@
 module Main where
 
-import Text.Printf (printf)
-import ParserOptions
+import           ParserOptions
+import           Text.Printf   (printf)
 
 main :: IO ()
 main = axioms =<< runParser
