@@ -9,20 +9,7 @@ module Engine (
   , buildAxiom3
   ) where
 
-import           Text.Printf
-
-data Proposition
-  = Symbol String
-  | Unary Connector Proposition
-  | Binary Connector Proposition Proposition
-  deriving Eq
-
-type Connector = String
-
-instance Show Proposition where
-  show (Symbol v)      = v
-  show (Unary sb p)    = printf "%s (%s)" sb (show p)
-  show (Binary sb a b) = printf "(%s) %s (%s)" (show a) sb (show b)
+import           AST
 
 symbol :: String -> Proposition
 symbol = Symbol
