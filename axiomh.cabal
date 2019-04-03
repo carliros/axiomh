@@ -17,8 +17,10 @@ extra-source-files:  CHANGELOG.md
 executable ahc
   main-is:             Main.hs
   other-modules:
+    AST
     Engine
     ParserOptions
+    ParserInput
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13
                      , uu-parsinglib >= 2.9.1.1

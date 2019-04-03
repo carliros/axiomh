@@ -1,6 +1,7 @@
 module Main where
 
 import           ParserOptions
+import           ParserInput(parseInput)
 import           Text.Printf   (printf)
 
 main :: IO ()
@@ -10,5 +11,6 @@ axioms :: AxiomOptions -> IO ()
 axioms (AxiomOptions inputFile) = do
   putStrLn $ printf "Reading input '%s' ..." inputFile
   fileContent <- readFile inputFile
+  let result = parseInput inputFile fileContent
   putStrLn "Print content ..."
-  putStrLn fileContent
+  putStrLn $ show result
