@@ -24,3 +24,9 @@ For example Shorter declarations can be
 And Larger declarations can be
   A -> ((A -> A) -> A) by Axiom 1 with A, (A -> A), A
   (A -> ((A -> A) -> A)) -> ((A -> (A -> A)) -> (A -> A)) by Axiom 2 with A, (A -> A), A
+
+## How to build
+~~~
+cabal build
+cabal exec ahc -- entries/test.ah
+~~~
