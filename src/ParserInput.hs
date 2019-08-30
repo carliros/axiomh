@@ -13,9 +13,20 @@ import           Text.ParserCombinators.UU
 import           Text.ParserCombinators.UU.BasicInstances
 import           Text.ParserCombinators.UU.Utils
 
-parseInput :: FilePath -> String -> Int
+parseInput :: FilePath -> String -> Proposition
 parseInput filepath fileContent
-  = runParser filepath pInteger fileContent
+  = runParser filepath pProposition fileContent
 
-pNumber :: Parser Int
-pNumber = pInteger
+pProposition :: Parser Proposition
+pProposition = Symbol <$> pSymbolProposition
+
+pSymbolProposition :: Parser String
+pSymbolProposition = (:[]) <$> pLetter
+
+{-
+pAxioms :: Parser Axioms
+pAxioms = pListSep pDemostration pSpaces
+
+pDemostration :: Parser Demostration
+pDemostration = pSymbol "Demonstrate" <* pSymbol "|-" <*> pProposition <* pSymbol "by" <*> pSteps
+-}

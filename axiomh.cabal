@@ -2,7 +2,7 @@ cabal-version:       >=1.10
 
 name:                axiomh
 version:             0.1.0.0
-synopsis:            Axioms propver helper
+synopsis:            Axioms prover helper
 -- description:
 -- bug-reports:
 license:             BSD3
@@ -22,7 +22,7 @@ executable ahc
     ParserOptions
     ParserInput
   -- other-extensions:
-  build-depends:       base >=4.12 && <4.13
+  build-depends:       base >=4.13 && <4.14
                      , uu-parsinglib >= 2.9.1.1
                      , optparse-applicative >= 0.14.3.0
   hs-source-dirs:      src
