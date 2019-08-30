@@ -9,6 +9,7 @@
 module ParserInput where
 
 import           AST
+import           Engine
 import           Text.ParserCombinators.UU
 import           Text.ParserCombinators.UU.BasicInstances
 import           Text.ParserCombinators.UU.Utils
@@ -18,7 +19,9 @@ parseInput filepath fileContent
   = runParser filepath pProposition fileContent
 
 pProposition :: Parser Proposition
-pProposition = Symbol <$> pSymbolProposition
+pProposition =  symbol <$> pSymbolProposition
+            <|> negation <$ pSymbol "~" <*> pProposition
+--            <|> implies  <$> pProposition <* pSymbol "->" <*> pProposition
 
 pSymbolProposition :: Parser String
 pSymbolProposition = (:[]) <$> pLetter
