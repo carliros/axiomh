@@ -23,14 +23,21 @@ pAxioms = pListSep pSpaces pDemostration
 
 pDemostration :: Parser Demostration
 pDemostration
-  = Demostration <$ pKey "Demonstrate" <*> pIdentifier <* pKey "|-" <*> pProposition <* pKey "by" <*> pList1_ng pStep
+  = Demostration <$  pKey "Demonstrate"
+                 <*> pIdentifier
+                 <*  pKey "|-"
+                 <*> pProposition
+                 <*  pKey "by"
+                 <*> pList1_ng pStep
 
 pStep :: Parser Step
 pStep =  LargeStep <$  pKey "|-" <*> pProposition <* pKey "by" <*> pActionStep
      <|> ShortStep <$> pActionStep
 
 pActionStep :: Parser ActionStep
-pActionStep = ActionStep <$> pIdentifier <* pKey "with" <*> pList1Sep pComma pArgument
+pActionStep = ActionStep <$> pIdentifier
+                         <*  pKey "with"
+                         <*> pList1Sep pComma pArgument
 
 pArgument :: Parser Argument
 pArgument =  ArgumentProp <$> pProposition
