@@ -10,12 +10,17 @@ data Demostration
   deriving Show
 
 data Step
-  = LargeStep Name Proposition ActionStep
-  | ShortStep Name ActionStep
+  = LargeStep Proposition ActionStep
+  | ShortStep ActionStep
   deriving Show
 
 data ActionStep
-  = ActionStep Name [Proposition]
+  = ActionStep Name [Argument]
+  deriving Show
+
+data Argument
+  = ArgumentProp Proposition
+  | ArgumentRef Int
   deriving Show
 
 data Proposition
